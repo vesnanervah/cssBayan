@@ -3,6 +3,7 @@
     padding:0;
     font-family: 'Roboto', sans-serif;
 }
+
 /*----Static visuals----*/
 .bayan-section{
     display: flex;
@@ -20,21 +21,23 @@
     font-size: 34px;
     padding-bottom: 15px;
     font-weight: 700;
-    color: rgb(21, 21, 20);
+    color: black;
 }
 .bayan-header-wrapper, .bayan-content-wrapper{
     width:72%;
 }
 .bayan-card{
     border-top: solid #b8b2ab 2px;
-    padding: 20px 0;
+    padding: 15px 0;
     color:#3d7adb;
+    display: flex;
+    flex-direction: column;
 }
 .bayan-line{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 700;
     font-style: italic;
 }
@@ -43,26 +46,35 @@
     width:0;
     height: 0;
     transition: all 0.6s;
+    margin: 0 auto;
+
 }
 .bayan-line-plus{
     position: relative;
     transform: none;
     transition:transform 0.8s;
 }
+
 /*--------*/
 
 /*----Hover and click logic*/
-.bayan-content-wrapper:hover .bayan-card{
-    color: rgb(21, 21, 20);
+.bayan-content-wrapper *{
     cursor: pointer;
 }
-.opened{
-    color:black;
+.bayan-content-wrapper:hover .bayan-card{
+    color: black;
 }
-.opened .bayan-line-plus, .bayan-card:hover .bayan-line-plus{
+.bayan-card > input{
+    display: none;
+}
+input:checked + label{
+    color:black
+}
+
+.bayan-card:hover .bayan-line-plus, input:checked +label .bayan-line-plus{
     transform: rotate(45deg);
 }
-.bayan-card:hover .bayan-image-wrapper, .opened .bayan-image-wrapper{
+.bayan-card:hover .bayan-image-wrapper, input:checked + label > .bayan-image-wrapper{
     margin-top: 20px;
     width:400px;
     height:400px;
