@@ -1,0 +1,64 @@
+*{
+    margin:0;
+    padding:0;
+    font-family: 'Roboto', sans-serif;
+}
+.bayan-section{
+    display: flex;
+    justify-content: center;
+}
+.container{
+    width:60%;
+    background-color: #f7f5f5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px 0;
+}
+.bayan-header{
+    font-size: 34px;
+    padding-bottom: 15px;
+    font-weight: 900;
+}
+.bayan-header-wrapper, .bayan-content-wrapper{
+    width:72%;
+}
+.bayan-card{
+    border-top: solid #b8b2ab 2px;
+    padding: 20px 0;
+    color:#3d7adb;
+}
+.bayan-content-wrapper:hover .bayan-card{
+    color: black;
+    cursor: pointer;
+}
+.bayan-line{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 700;
+    font-style: italic;
+}
+.bayan-image-wrapper{
+    text-align: center;
+    display: none;
+    margin-top: 20px;
+}
+.bayan-line-plus{
+    position: relative;
+    transform: none;
+    transition:transform 1s;
+}
+
+.opened{
+    color:black;
+}
+.opened .bayan-line-plus{
+    transform: rotate(45deg);
+}
+.opened .bayan-image-wrapper{
+    display: block;
+}
+
+
