@@ -3,6 +3,7 @@
     padding:0;
     font-family: 'Roboto', sans-serif;
 }
+/*----Static visuals----*/
 .bayan-section{
     display: flex;
     justify-content: center;
@@ -18,7 +19,8 @@
 .bayan-header{
     font-size: 34px;
     padding-bottom: 15px;
-    font-weight: 900;
+    font-weight: 700;
+    color: rgb(21, 21, 20);
 }
 .bayan-header-wrapper, .bayan-content-wrapper{
     width:72%;
@@ -27,10 +29,6 @@
     border-top: solid #b8b2ab 2px;
     padding: 20px 0;
     color:#3d7adb;
-}
-.bayan-content-wrapper:hover .bayan-card{
-    color: black;
-    cursor: pointer;
 }
 .bayan-line{
     display: flex;
@@ -41,24 +39,33 @@
     font-style: italic;
 }
 .bayan-image-wrapper{
-    text-align: center;
-    display: none;
-    margin-top: 20px;
+    display: flex;
+    width:0;
+    height: 0;
+    transition: all 0.6s;
 }
 .bayan-line-plus{
     position: relative;
     transform: none;
-    transition:transform 1s;
+    transition:transform 0.8s;
 }
+/*--------*/
 
+/*----Hover and click logic*/
+.bayan-content-wrapper:hover .bayan-card{
+    color: rgb(21, 21, 20);
+    cursor: pointer;
+}
 .opened{
     color:black;
 }
-.opened .bayan-line-plus{
+.opened .bayan-line-plus, .bayan-card:hover .bayan-line-plus{
     transform: rotate(45deg);
 }
-.opened .bayan-image-wrapper{
-    display: block;
+.bayan-card:hover .bayan-image-wrapper, .opened .bayan-image-wrapper{
+    margin-top: 20px;
+    width:400px;
+    height:400px;
 }
 
 
