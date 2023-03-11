@@ -3,8 +3,6 @@
     padding:0;
     font-family: 'Roboto', sans-serif;
 }
-
-/*----Static visuals----*/
 .bayan-section{
     display: flex;
     justify-content: center;
@@ -15,11 +13,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 25px 0;
 }
 .bayan-header{
-    font-size: 34px;
-    padding-bottom: 15px;
     font-weight: 700;
     color: black;
 }
@@ -27,8 +22,7 @@
     width:72%;
 }
 .bayan-card{
-    border-top: solid #b8b2ab 2px;
-    padding: 15px 0;
+    border-top: solid #b8b2ab 0.3vh;
     color:#3d7adb;
     display: flex;
     flex-direction: column;
@@ -37,7 +31,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 22px;
     font-weight: 700;
     font-style: italic;
 }
@@ -55,7 +48,65 @@
     transition:transform 0.8s;
 }
 
-/*--------*/
+@media(min-width:1200px) and (max-width:1920px){
+    .container{
+        width:72%;
+        padding:clamp(1.25rem, 0.208rem + 1.39vw, 1.875rem) /*-min20px max30px-*/
+    }
+    .bayan-header-wrapper, .bayan-content-wrapper{
+        width:80%;
+    }
+    .bayan-card{
+        padding:clamp(0.75rem, -0.083rem + 1.11vw, 1.25rem) /*-min12px max20px-*/ 0;
+    }
+    .bayan-header{
+        font-size:clamp(1.875rem, 0.417rem + 1.94vw, 2.75rem) /*-min30px max44px-*/;
+        padding:clamp(0.75rem, -0.083rem + 1.11vw, 1.25rem) /*-min12px max20px-*/ 0;
+    }
+    .bayan-line{
+        font-size: clamp(1.313rem, 0.792rem + 0.69vw, 1.625rem)/*-min21px max26px-*/;
+    }
+}
+@media(min-width:820px) and (max-width:1199px){
+    .container{
+        width:76%;
+        padding:clamp(0.938rem, 0.538rem + 2vw, 1.563rem) 0/*-min15px max25px-*/
+    }
+    .bayan-header-wrapper, .bayan-content-wrapper{
+        width:92%;
+    }
+    .bayan-card{
+        padding:clamp(0.75rem, 0.344rem + 0.79vw, 0.938rem) /*-min12px max15px-*/ 0;
+    }
+    .bayan-header{
+        font-size:clamp(2rem, 1.459rem + 1.06vw, 2.25rem) /*-min32px max36px-*/;
+        padding-bottom: clamp(0.75rem, 0.344rem + 0.79vw, 0.938rem) /*-min12px max15px-*/;
+    }
+    .bayan-line{
+        font-size: clamp(1.313rem, 0.907rem + 0.79vw, 1.5rem)/*-min21px max24px-*/;
+    }
+
+}
+@media(min-width:320px) and (max-width:819px){
+    .container{
+        width:100%;
+        padding:clamp(0.625rem, 0.144rem + 2.4vw, 1.375rem) 0 /*-min10px max22px-*/
+    }
+    .bayan-header-wrapper, .bayan-content-wrapper{
+        width:90%;
+    }
+    .bayan-card{
+        padding:clamp(0.313rem, 0.032rem + 1.4vw, 0.75rem) /*-min5px max12px-*/ 0;
+    }
+    .bayan-header{
+        font-size: clamp(1.375rem, 0.974rem + 2vw, 2rem) /*-min22px max32px-*/;
+        padding-bottom: clamp(0.313rem, 0.032rem + 1.4vw, 0.75rem) /*-min5px max12px-*/;
+    }
+    .bayan-line{
+        font-size: clamp(0.625rem, 0.184rem + 2.2vw, 1.313rem)/*-min10px max21px-*/;
+    }
+}
+
 
 /*----Hover and click logic*/
 .bayan-content-wrapper *{
@@ -80,4 +131,25 @@ input:checked + label{
     height:400px;
 }
 
+@media(min-width:1200px) and (max-width:1920px){
+    .bayan-card:hover .bayan-image-wrapper, input:checked + label > .bayan-image-wrapper{
+        margin-top: clamp(0.75rem, -0.083rem + 1.11vw, 1.25rem) /*-min12px max20px-*/;
+        width:clamp(21.25rem, 13.137rem + 15.83vw, 25rem); /*-min340px max400px-*/
+        height:clamp(21.25rem, 13.137rem + 15.83vw, 25rem); /*-min340px max400px-*/
+    }
+}
+@media(min-width:820px) and (max-width:1199px){
+    .bayan-card:hover .bayan-image-wrapper, input:checked + label > .bayan-image-wrapper{
+        margin-top: clamp(0.75rem, 0.344rem + 0.79vw, 0.938rem) /*-min12px max15px-*/;
+        width:clamp(21.25rem, 13.137rem + 15.83vw, 25rem); /*-min340px max400px-*/
+        height:clamp(21.25rem, 13.137rem + 15.83vw, 25rem); /*-min340px max400px-*/
+    }
+}
+@media(min-width:320px) and (max-width:819px){
+    .bayan-card:hover .bayan-image-wrapper, input:checked + label > .bayan-image-wrapper{
+        margin-top: clamp(0.313rem, 0.032rem + 1.4vw, 0.75rem) /*-min5px max12px-*/;
+        width:clamp(11.25rem, 4.837rem + 32.06vw, 21.25rem); /*-min180px max340px-*/
+        height:clamp(11.25rem, 4.837rem + 32.06vw, 21.25rem); /*-min180px max320px-*/
+    }
+}
 
